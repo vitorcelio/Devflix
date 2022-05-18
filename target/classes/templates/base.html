@@ -1,0 +1,553 @@
+<script th:fragment="sem-espaco" type="text/javascript">
+	function CheckSpace(event) {
+		if (event.which == 32) {
+			event.preventDefault();
+			return false;
+		}
+	}
+</script>
+
+<style th:fragment="estilos">
+	.center {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		text-align: center;
+	}
+
+	.bg-dark {
+		background-color: rgba(0, 0, 0, 0.844) !important;
+	}
+
+	.text-red {
+		color: white;
+	}
+
+	.text-red:hover {
+		color: rgb(150, 150, 150);
+	}
+
+	.form-control {
+		padding: 10px 10px !important;
+		background-color: rgba(0, 0, 0, 0.337) !important;
+		border-radius: 0;
+		color: brown;
+	}
+
+	.btn {
+		border-radius: 0;
+	}
+
+	.linguagem {
+		padding: 2px 4px;
+		background-color: rgba(255, 255, 255, 0.289);
+		border-radius: 5px;
+	}
+
+	.text-princi {
+		font-family: 'Bebas Neue', cursive;
+		color: white;
+		font-size: 30px
+	}
+
+	.text-princi:hover {
+		color: rgb(182, 4, 4);
+	}
+
+	.redes-sociais li {
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+
+	.redes-sociais li a {
+		color: rgb(255, 79, 79);
+	}
+
+	.redes-sociais li a:hover {
+		color: #ff0000;
+	}
+
+	.font-nextflix {
+		font-family: 'Bebas Neue', cursive;
+	}
+
+	.box {
+		padding-top: 180px !important;
+		background-repeat: no-repeat;
+		background-size: cover;
+		padding-right: 1rem !important;
+		padding-left: 1rem !important;
+	}
+
+	.box:hover {
+		transform: scale(1.05);
+		transition-duration: 0.1s
+	}
+
+	.mh {
+		max-height: 70px;
+		min-height: 70px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.botao-red-menu {
+		background-color: red;
+		border: none;
+		border-radius: 4px;
+		margin-left: 30px;
+	}
+
+	* {
+		scrollbar-width: thin;
+		scrollbar-color: blue orange;
+	}
+
+	*::-webkit-scrollbar {
+		width: 12px;
+	}
+
+	*::-webkit-scrollbar-track {
+		background: #420000;
+	}
+
+	*::-webkit-scrollbar-thumb {
+		background-color: red;
+		border: 3px solid red;
+	}
+
+	.btn-light2 {
+		background-color: #655F5C;
+		color: white;
+	}
+
+	.btn-light2:hover {
+		color: white;
+	}
+	
+	.inativo{
+		background-color: black !important;
+		color: red !important;
+	}
+	
+	.ativo{
+		background-color: red !important;
+		color: white !important;
+	}
+	
+	@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+</style>
+
+<style th:fragment="estilos2">
+	.center {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		text-align: center;
+	}
+
+	.bg-dark {
+		background-color: rgb(0, 0, 0) !important;
+	}
+
+	.text-red {
+		color: white;
+	}
+
+	.text-red:hover {
+		color: rgb(150, 150, 150);
+	}
+
+	.form-control {
+		padding: 15px 15px;
+		background-color: white !important;
+		border-radius: 0;
+		color: rgb(158, 91, 91);
+	}
+
+	.btn {
+		border-radius: 0;
+	}
+
+	.linguagem {
+		padding: 2px 4px;
+		background-color: rgba(255, 255, 255, 0.289);
+		border-radius: 5px;
+	}
+
+	.text-princi {
+		font-family: 'Bebas Neue', cursive;
+		color: white;
+		font-size: 30px
+	}
+
+	.text-princi:hover {
+		color: rgb(182, 4, 4);
+	}
+
+	.redes-sociais li {
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+
+	.redes-sociais li a {
+		color: rgb(255, 79, 79);
+	}
+
+	.redes-sociais li a:hover {
+		color: #ff0000;
+	}
+
+	.font-nextflix {
+		font-family: 'Bebas Neue', cursive;
+	}
+
+	.box {
+		padding-top: 80px !important;
+	}
+
+	.fundo {
+		background-repeat: no-repeat;
+		background-size: cover;
+		border-bottom: 5px solid rgb(43, 43, 43);
+		min-height: 700px;
+	}
+
+	.mt {
+		margin-top: 100px;
+	}
+
+	.botao-red {
+		background-color: red;
+		border: none;
+		width: 50%;
+	}
+
+	.botao-red:hover {
+		background-color: red;
+		color: rgb(191, 191, 191);
+	}
+
+	.botao-red-menu {
+		background-color: red;
+		border: none;
+		border-radius: 4px;
+		margin-left: 30px;
+	}
+
+	.yt {
+		background-color: red;
+		border-radius: 8px;
+		padding: 0 5px
+	}
+
+	*::-webkit-scrollbar {
+		width: 12px;
+	}
+
+	*::-webkit-scrollbar-track {
+		background: #420000;
+	}
+
+	*::-webkit-scrollbar-thumb {
+		background-color: red;
+		border: 3px solid red;
+	}
+
+	@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+</style>
+
+<div th:fragment="menu" class="p-4 text-white rounded"
+	style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.857), rgba(0, 0, 0, 0.823), rgba(0, 0, 0, 0.83)), url(/img/bg.png); background-repeat: no-repeat; background-size: cover; border-bottom: 5px solid red;">
+
+	<header>
+		<div class="container-fluid">
+			<div class="d-flex justify-content-between">
+
+				<a href="/home" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+					<img src="/img/DEV.png" alt="logo" width="124" height="36.5">
+				</a>
+
+				<div class="text-end d-none d-sm-block d-sm-none d-md-block">
+					<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ">
+						<li><a href="/linguagens" class="nav-link text-red btn btn-outline-dark border">Linguagens
+								de programação</a></li>
+						<li><a href="/cursos" class="nav-link text-red botao-red-menu">Cursos</a></li>
+					</ul>
+				</div>
+
+
+				<div
+					class="nav-item dropdown d-md-none d-lg-block d-lg-none d-xl-block d-xl-none d-xxl-block d-xxl-none">
+					<a style="color: white; border: none; background-color: transparent; font-size: 30px"
+						class="nav-link" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">
+						<ion-icon name="menu-sharp"></ion-icon>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="dropdown01">
+						<li><a class="dropdown-item" href="/linguagens">Linguagens
+								de Programação</a></li>
+						<li><a class="dropdown-item" href="/cursos">Cursos</a></li>
+					</ul>
+				</div>
+
+			</div>
+			</div>
+	</header>
+</div>
+
+<div th:fragment="title(valor)" class="p-md-4 text-center bg-dark text-white mb-0"
+	style="padding-bottom: 10px; padding-top: 10px">
+	<h1 class="fw-bold" th:text="${valor}">Linguagens de programação</h1>
+</div>
+
+<header th:fragment="menu-pagina">
+	<div class="container-fluid">
+		<div class="d-flex justify-content-between">
+
+			<a href="/home" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+				<img src="/img/DEV.png" alt="logo" width="124" height="36.5">
+			</a>
+
+			<div class="text-end d-none d-sm-block d-sm-none d-md-block">
+				<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ">
+					<li><a href="/linguagens" class="nav-link text-red btn btn-outline-dark border">Linguagens
+							de programação</a></li>
+					<li><a href="/cursos" class="nav-link text-red botao-red-menu">Cursos</a></li>
+				</ul>
+			</div>
+
+			<div class="nav-item dropdown d-md-none d-lg-block d-lg-none d-xl-block d-xl-none d-xxl-block d-xxl-none">
+				<a style="color: white; border: none; background-color: transparent; font-size: 30px" class="nav-link"
+					href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">
+					<ion-icon name="menu-sharp"></ion-icon>
+				</a>
+				<ul class="dropdown-menu" aria-labelledby="dropdown01">
+					<li><a class="dropdown-item" href="/linguagens">Linguagens
+							de Programação</a></li>
+					<li><a class="dropdown-item" href="/cursos">Cursos</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>
+
+<header th:fragment="menu-login">
+	<div class="container-fluid">
+		<div class="d-flex justify-content-between">
+
+			<a href="/home" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+				<img src="/img/DEV.png" alt="logo" width="124" height="36.5">
+			</a>
+
+			<div></div>
+		</div>
+	</div>
+</header>
+
+<footer th:fragment="footer" style="vertical-align: bottom; padding-top: 15px; background: black; width: 100%;"
+	class="p-4">
+	<h4 style="text-align: center; font-size: 15px" class="text-white">Copyright
+		© 2021 Todos direitos <a class="text-decoration-none text-white" th:href="@{/login}">reservados</a></h4>
+	<ul class="center redes-sociais navbar-nav" style="flex-direction: row;">
+		<li class="nav-item"><a style="font-size: 20px" target="_blank" href="https://instagram.com/vitucelio">
+				<ion-icon name="logo-instagram"></ion-icon>
+			</a></li>
+		<li class="nav-item"><a style="font-size: 20px" target="_blank" href="https://github.com/vitorcelio">
+				<ion-icon name="logo-github"></ion-icon>
+			</a></li>
+		<li class="nav-item"><a style="font-size: 20px" target="_blank" href="https://twitter.com/vitucelio">
+				<ion-icon name="logo-twitter"></ion-icon>
+			</a></li>
+		<li class="nav-item"><a style="font-size: 20px" target="_blank" href="https://www.facebook.com/pessoa.vitor.16">
+				<ion-icon name="logo-facebook"></ion-icon>
+			</a></li>
+	</ul>
+
+</footer>
+
+<header th:fragment="menu-admin" class="flex-shrink-0 p-3 bg-dark d-none d-sm-block d-sm-none d-md-block"
+	style="width: 20%">
+	<a href="/home" class="d-flex align-items-center center pb-3 mb-3 text-decoration-none">
+		<img src="/img/DEV.png" alt="logo" width="50%">
+	</a>
+	<ul class="list-unstyled ps-0">
+		<li class="mb-1">
+			<button th:classappend="${menu} == 'curso' ? 'ativo' "
+				class="btn btn-toggle align-items-center rounded collapsed text-white" data-bs-toggle="collapse"
+				data-bs-target="#home-collapse" aria-expanded="true">Cursos</button>
+			<div th:classappend="${menu} == 'curso' ? 'show' " class="collapse" id="home-collapse">
+				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+					<li><a href="/admin/adicionar-curso" class="link-dark rounded">Adicionar
+							Curso</a></li>
+					<li><a href="/admin/cursos" class="link-dark rounded">Lista
+							de Cursos</a></li>
+				</ul>
+			</div>
+		</li>
+		<li class="mb-1">
+			<button th:classappend="${menu} == 'linguagem' ? 'ativo' "
+				class="btn btn-toggle align-items-center rounded collapsed text-white" data-bs-toggle="collapse"
+				data-bs-target="#dashboard-collapse" aria-expanded="false">Linguagens</button>
+			<div th:classappend="${menu} == 'linguagem' ? 'show' " class="collapse" id="dashboard-collapse">
+				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+					<li><a href="/admin/adicionar-linguagem" class="link-dark rounded">Adicionar
+							Linguagem</a></li>
+					<li><a href="/admin/linguagens" class="link-dark rounded">Lista
+							de linguagens</a></li>
+				</ul>
+			</div>
+		</li>
+		<li class="border-top my-3" style="border-color: red !important;"></li>
+		<li class="mb-1">
+			<a onclick="document.querySelector('#form-logout').submit()" href="#" class="btn align-items-center rounded text-white" data-bs-toggle="collapse"
+				data-bs-target="#account-collapse" aria-expanded="false">
+				Sair 
+			</a>
+			<form id="form-logout" th:action="@{/logout}" method="post"></form>
+		</li>
+	</ul>
+</header>
+
+
+<style th:fragment="estilos-admin">
+	.ativo {
+		background-color: red !important;
+	}
+
+	.center {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		text-align: center;
+	}
+
+	.bg-dark {
+		background-color: rgb(0, 0, 0) !important;
+	}
+
+	.redes-sociais li {
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+
+	.redes-sociais li a {
+		color: rgb(255, 79, 79);
+	}
+
+	.redes-sociais li a:hover {
+		color: #ff0000;
+	}
+
+	.divider {
+		padding-left: 0px !important;
+		padding-right: 0px !important;
+		width: 0px !important;
+	}
+
+	.btn-toggle {
+		background-color: rgba(255, 0, 0, 0);
+	}
+
+	.btn-toggle:hover {
+		background-color: rgb(255, 0, 0);
+	}
+
+	.btn-toggle:focus {
+		background-color: rgb(237, 44, 44);
+	}
+
+	.link-dark {
+		color: rgb(167, 167, 167);
+	}
+
+	.link-dark:hover {
+		color: rgb(255, 255, 255);
+		background-color: rgba(0, 0, 0, 0.165) !important;
+	}
+
+	.link-dark:focus {
+		color: white;
+		background-color: rgba(209, 209, 209, 0.165) !important;
+	}
+
+	.btn-toggle-nav {
+		background-color: rgb(14, 14, 14);
+		border-radius: 10px;
+	}
+
+	.input-group2 {
+		position: relative;
+		display: flex;
+		align-items: stretch;
+	}
+
+	.form-control {
+		background-color: rgba(255, 255, 255, 0.248);
+		border-radius: 0;
+		color: white !important;
+		border: none;
+	}
+
+	.form-control:focus {
+		background-color: rgba(255, 255, 255, 0.248);
+		color: white !important;
+	}
+
+	.input-group-text {
+		background-color: black;
+		color: white;
+		border-radius: 0;
+		border-right: 0;
+	}
+
+	.form-select {
+		background-color: black;
+		color: white;
+		border-radius: 0;
+		border-left: 0;
+	}
+
+	.btn {
+		margin-top: 20px;
+		border-radius: 0;
+		font-weight: bold
+	}
+
+	main {
+		overflow-y: none;
+		overflow-x: none;
+		max-height: none;
+	}
+
+	.wt {
+		width: 40px;
+		align-items: center;
+	}
+
+	tr {
+		margin-bottom: 5px !important;
+	}
+
+	.table-striped>tbody>tr:nth-of-type(odd) {
+		--bs-table-accent-bg: black !important;
+		border: 1px solid white;
+	}
+
+	.table-dark {
+		--bs-table-bg: #ffffff43;
+	}
+
+	table tr th {
+		background-color: #c90000 !important;
+	}
+
+	.form-espaco {
+		margin-bottom: 20px;
+	}
+
+	.invalid-feedback {
+		display: initial;
+	}
+
+	@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+</style>

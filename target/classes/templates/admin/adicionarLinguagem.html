@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevFlix - Adicionar Linguagem</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/5.1/examples/sidebars/sidebars.css">
+    <style th:replace="~{base :: estilos-admin}"></style>   
+	<script th:replace="~{base :: sem-espaco}"></script>
+</head>
+
+<body style="background-color: rgba(0, 0, 0, 0.950) !important;">
+
+    <section class="container-fluid" style="width: 100%; height: 100%;">
+        <div class="row">
+
+            <div class="b-example-divider divider"></div>
+
+             <header th:replace="~{base :: menu-admin}"></header>
+
+            <main style="width: 80%; display: inline;" class="mt-5 mb-5">
+                <form th:object="${requisicaoNovaLinguagem}" action="/admin/novaLinguagem" class="container" method="post">
+                    <h1 class="text-white">Adicionar Linguagem</h1>
+                    <div class="row">
+						
+						<div class="form-espaco">
+	                        <label for="basic-url" class="form-label text-white">Nome da Linguagem</label>
+	                        <div class="col-md-6 input-group2">
+	                            <span class="input-group-text" id="basic-addon1">
+	                                <ion-icon name="logo-javascript"></ion-icon>
+	                            </span>
+	                            <input th:field="*{nome}" th:errorclass="is-invalid" type="text" class="form-control" id="basic-url">
+	                        </div>		
+	                        <div class="invalid-feedback" th:errors="*{nome}"></div>				
+						</div>
+						
+						<div class="form-espaco">
+	                        <label for="img" class="form-label text-white">Imagem da Linguagem</label>
+	                        <div class="col-md-6 input-group2">
+	                            <span class="input-group-text" id="basic-addon1">
+	                                <ion-icon name="image-outline"></ion-icon>
+	                            </span>
+	                            <input th:field="*{imagem}" th:errorclass="is-invalid" type="text" class="form-control" id="img">
+	                        </div>			
+	                        <div class="invalid-feedback" th:errors="*{imagem}"></div>			
+						</div>
+						
+						<div class="form-espaco">
+	                        <label for="li" class="form-label text-white">Link da Linguagem</label>
+	                        <div class="col-md-6 input-group2">
+	                            <span class="input-group-text" id="basic-addon1">
+	                                <ion-icon name="link-outline"></ion-icon>
+	                            </span>
+	                            <input th:field="*{link}" th:errorclass="is-invalid" type="text" class="form-control" id="li" onkeypress="CheckSpace(event)">
+	                        </div>		
+	                        <div class="invalid-feedback" th:errors="*{link}"></div>				
+						</div>
+
+                    </div>
+                    <button class="col-md-2 btn btn-qd btn-light">SALVAR</button>
+                </form>
+            </main>
+        </div>
+    </section>
+    <footer th:replace="~{base :: footer}"></footer>
+    <script src="https://getbootstrap.com/docs/5.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

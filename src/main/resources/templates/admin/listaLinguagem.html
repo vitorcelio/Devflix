@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevFlix - Lista de Linguagens</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/5.1/examples/sidebars/sidebars.css">
+    <style th:replace="~{base :: estilos-admin}"></style>   
+
+</head>
+
+<body style="background-color: rgba(0, 0, 0, 0.950) !important;">
+
+    <section class="container-fluid" style="width: 100%; height: 100%;">
+        <div class="row">
+
+            <div class="b-example-divider divider"></div>
+
+            <header th:replace="~{base :: menu-admin}"></header>
+
+            <main style="width: 80%; display: inline;" class="mt-5 mb-5">
+                <form action="" class="container">
+
+                    <h1 class="text-white mb-5">Lista de Linguagens</h1>
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <table class="table table-striped table-dark">
+                                <tbody>
+                                    
+                                    <tr th:each="linguagem : ${linguagens}">
+                                        <td class="wt">
+                                            <img th:src="${linguagem.imagem}" alt="linguagem" width="30px" height="30px" style="border-radius: 100px;">
+                                        </td>
+                                        <td th:text="${linguagem.nome}">Java</td>
+                                        <td class="wt">
+                                            <a th:href="'/admin/linguagens/'+${linguagem.link}" class="text-white">
+                                                <ion-icon name="create-outline"></ion-icon>
+                                            </a>
+                                        </td>
+                                        <td class="wt">
+                                            <a th:href="'/admin/remover-linguagem/'+${linguagem.id}" class="text-white">
+                                                <ion-icon name="trash-outline"></ion-icon>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                </form>
+            </main>
+        </div>
+    </section>
+    <header th:replace="~{base :: footer}"></header>
+    <script src="https://getbootstrap.com/docs/5.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

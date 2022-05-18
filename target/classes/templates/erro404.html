@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevFlix - Erro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="icon" href="/img/dico.png">
+    <style th:replace="~{base :: estilos}"></style>
+</head>
+
+<body class="bg-dark">
+
+   <div th:replace="~{base :: menu}"></div>
+
+    <main>
+        <section>
+        	<div class="bg-dark" style="padding-top: 162px"></div>
+            <div th:replace="~{base :: title('Erro 404 - Página não encontrada')}"></div>
+            <div class="bg-dark" style="padding-bottom: 160px"></div>
+        </section>
+
+    </main>
+
+	<footer th:replace="~{base :: footer}"></footer>
+    
+	<script src="https://getbootstrap.com/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
